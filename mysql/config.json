@@ -6,10 +6,14 @@
   "arch": ["amd64", "armhf", "armv7", "aarch64"],
   "auto_update": false,
   "options": {
-    "MYSQL_ROOT_PASSWORD": "homeassistant"
+    "MYSQL_ROOT_PASSWORD": "homeassistant",
+    "MYSQL_USER": "homeassistant",
+    "MYSQL_PASSWORD": "homeassistant"
   },
   "schema": {
-    "MYSQL_ROOT_PASSWORD": "str?"
+    "MYSQL_ROOT_PASSWORD": "str?",
+    "MYSQL_USER": "str?",
+    "MYSQL_PASSWORD": "str?",
   },
   "ports": {
     "3310/tcp": 3310
