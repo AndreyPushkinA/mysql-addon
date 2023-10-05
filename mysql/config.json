@@ -1,0 +1,17 @@
+{
+  "name": "MySQL",
+  "version": "1.0.0",
+  "slug": "mysql",
+  "description": "MySQL server for Home Assistant",
+  "arch": ["amd64", "armhf", "armv7", "aarch64"],
+  "auto_update": false,
+  "options": {
+    "MYSQL_ROOT_PASSWORD": "homeassistant"
+  },
+  "schema": {
+    "MYSQL_ROOT_PASSWORD": "str?"
+  },
+  "ports": {
+    "3310/tcp": 3310
+  }
+}
