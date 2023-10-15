@@ -35,3 +35,5 @@ RUN service postgresql start && \
     su - postgres -c "createdb homeassistant" && \
     su - postgres -c "psql -c \"CREATE USER homeassistant WITH PASSWORD 'homeassistant';\"" && \
     su - postgres -c "psql -c \"GRANT ALL PRIVILEGES ON DATABASE homeassistant TO homeassistant;\""
+
+CMD ["clickhouse-server"]
