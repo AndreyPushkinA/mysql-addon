@@ -5,17 +5,9 @@
   "description": "MySQL server for Home Assistant",
   "arch": ["amd64", "armhf", "armv7", "aarch64"],
   "auto_update": false,
-  "options": {
-    "MYSQL_ROOT_PASSWORD": "homeassistant",
-    "MYSQL_USER": "homeassistant",
-    "MYSQL_PASSWORD": "homeassistant"
-  },
-  "schema": {
-    "MYSQL_ROOT_PASSWORD": "str?",
-    "MYSQL_USER": "str?",
-    "MYSQL_PASSWORD": "str?",
-  },
   "ports": {
-    "3310/tcp": 3310
+    "8124": 8124,
+    "9000": 9000,
+    "5432": 5432
   }
 }
