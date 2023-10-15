@@ -1,4 +1,4 @@
 # https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
-name: MySQL add-on for Home Assitant
+name: PostgreSQL & Clickhouse
 url: 'https://github.com/AndreyPushkinA/mysql-addon'
 maintainer: Awesome Maintainer <andrey.a.pushkin@gmail.com>
