@@ -5,6 +5,7 @@
   "description": "MySQL server for Home Assistant",
   "arch": ["amd64", "armhf", "armv7", "aarch64"],
   "auto_update": false,
+  "init": false,
   "ports": {
     "8124": 8124,
     "9000": 9000,
