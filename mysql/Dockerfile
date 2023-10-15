@@ -27,6 +27,8 @@ RUN apt-get update && apt-get install -y lsb-release wget gnupg \
 
 COPY init.sh /docker-entrypoint-initdb.d/
 
+RUN service clickhouse-server start
+
 EXPOSE 5432 8124 9000
 
 RUN service postgresql start && \
