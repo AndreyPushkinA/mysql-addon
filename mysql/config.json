@@ -1,14 +1,35 @@
 {
-  "name": "MySQL",
-  "version": "1.0.0",
-  "slug": "mysql",
-  "description": "MySQL server for Home Assistant",
-  "arch": ["amd64", "armhf", "armv7", "aarch64"],
-  "auto_update": false,
-  "init": false,
-  "ports": {
-    "8124": 8124,
-    "9000": 9000,
-    "5432": 5432
+    "name": "PostgreSQL to Clickhouse",
+    "version": "0.0.1",
+    "slug": "postgresql-clickhouse",
+    "description": "PostgreSQL to Clickhouse addon Home Assistant",
+    "url": "https://github.com/AndreyPushkinA/clickhouse-client-addon",
+    "arch": ["amd64"],
+    "init": false,
+    "startup": "application",
+    "homeassistant_api": true,
+    "ports": {
+        "8124": 8124,
+        "9000": 9000
+    },
+    "options": {
+        "db_name": null,
+        "pg_host": null,
+        "pg_port": null,
+        "pg_db": null,
+        "pg_user": null,
+        "pg_pass": null,
+        "ch_host": null,
+        "ch_port": null
+  },
+    "schema": {
+        "db_name": "str",
+        "pg_host": "str",
+        "pg_port": "str",
+        "pg_db": "str",
+        "pg_user": "str",
+        "pg_pass": "str",
+        "ch_host": "str",
+        "ch_port": "str"
   }
 }
