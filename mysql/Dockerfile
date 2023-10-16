@@ -13,5 +13,7 @@ COPY ports.xml /etc/clickhouse-server/config.d/
 # Экспонируем порты
 EXPOSE 8124 9000
 
+RUN clickhouse-server
+
 # Запускаем скрипт run.sh при запуске контейнера
 CMD [ "/run.sh" ]
