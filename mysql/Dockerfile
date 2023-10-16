@@ -1,11 +1,8 @@
 FROM yandex/clickhouse-server:latest
 
-# Устанавливаем зависимости и копируем run.sh
-RUN apt-get update && apt-get install -y \
-    bash \
-    grep \
-    && rm -rf /var/lib/apt/lists/* \
-    && chmod a+x /run.sh
+COPY run.sh /
+
+RUN chmod a+x /run.sh
 
 # Заменяем конфигурацию ClickHouse
 RUN sed -i 's|<!-- Maximum memory usage for processing single query, in bytes. -->|<allow_experimental_database_materialized_postgresql>1</allow_experimental_database_materialized_postgresql>|' /etc/clickhouse-server/users.xml
