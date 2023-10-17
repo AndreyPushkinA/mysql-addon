@@ -9,4 +9,4 @@ RUN chmod a+x /run.sh
 
 RUN /run.sh
 
-EXPOSE 8124 9001
+EXPOSE 8124 9000
