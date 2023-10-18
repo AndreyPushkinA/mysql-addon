@@ -1,6 +1,6 @@
 #!/bin/bash
 
-clickhouse-server -c /etc/clickhouse-server/config.d/ports.xml
+clickhouse-server -C /etc/clickhouse-server/config.d/ports.xml
 
 OPTIONS_PATH="/data/options.json"
 
