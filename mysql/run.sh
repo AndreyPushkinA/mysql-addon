@@ -1,5 +1,7 @@
 #!/bin/bash
 
+clickhouse-server
+
 OPTIONS_PATH="/data/options.json"
 
 get_option_value() {
