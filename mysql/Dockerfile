@@ -8,12 +8,8 @@ RUN sed -i 's|<!-- Maximum memory usage for processing single query, in bytes. -
 COPY ports.xml /etc/clickhouse-server/config.d/
 COPY run.sh /run.sh
 
-USER root
-
 # Make the entry point script executable
 RUN chmod +x /run.sh
-
-USER clickhouse
 
 # Set the entry point for the container
 ENTRYPOINT ["/run.sh"]
