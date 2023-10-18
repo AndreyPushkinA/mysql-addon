@@ -8,7 +8,7 @@ get_option_value() {
     grep "\"$1\"" $OPTIONS_PATH | cut -d ':' -f2 | tr -d ' ",'
 }
 
-DB_NAME=$(get_option_value "dab_name")
+DB_NAME=$(get_option_value "db_name")
 PG_HOST=$(get_option_value "pg_host")
 PG_PORT=$(get_option_value "pg_port")
 PG_DB=$(get_option_value "pg_db")
