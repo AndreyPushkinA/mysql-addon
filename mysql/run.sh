@@ -1,7 +1,5 @@
 #!/bin/bash
 
-chmod 644 /data/options.json
-
 OPTIONS_PATH="/data/options.json"
 
 get_option_value() {
