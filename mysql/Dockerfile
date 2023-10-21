@@ -1,20 +1,19 @@
-# Use the official ClickHouse image as the base image
-FROM yandex/clickhouse-server:latest
+FROM ubuntu:latest
 
-# Modify the ClickHouse configuration as needed
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && \
+    apt-get install -y apt-transport-https ca-certificates dirmngr sudo && \
+    apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 8919F6BD2B48D754 && \
+    echo "deb https://packages.clickhouse.com/deb stable main" | tee /etc/apt/sources.list.d/clickhouse.list && \
+    apt-get update
+
+RUN apt-get install -y clickhouse-server clickhouse-client
+
 RUN sed -i 's|<!-- Maximum memory usage for processing single query, in bytes. -->|<allow_experimental_database_materialized_postgresql>1</allow_experimental_database_materialized_postgresql>|' /etc/clickhouse-server/users.xml
 
-# Copy your configuration files into the container
 COPY ports.xml /etc/clickhouse-server/config.d/
-COPY run.sh /run.sh
 
-# Make the entry point script executable
-RUN chmod +x /run.sh
+CMD ["service", "clickhouse-server", "start"]
 
-# Set the entry point for the container
-ENTRYPOINT ["/run.sh"]
-
-CMD ["clickhouse-server"]
-
-# Expose the necessary ports
 EXPOSE 8124 9000
